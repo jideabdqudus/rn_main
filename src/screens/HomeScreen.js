@@ -1,5 +1,12 @@
 import React from "react";
-import { Text, StyleSheet, View, Button, TouchableOpacity } from "react-native";
+import {
+  Text,
+  StyleSheet,
+  View,
+  Button,
+  TouchableOpacity,
+  Image,
+} from "react-native";
 import ComponentsScreen from "./ComponentScreen";
 import ListScreen from "./ListScreen";
 
@@ -8,7 +15,6 @@ const HomeScreen = (props) => {
   return (
     <View>
       <Text style={styles.text}>Hello World</Text>
-      <ComponentsScreen />
       <Button
         title="Go to List Screen"
         onPress={() => navigation.navigate("List")}
@@ -16,7 +22,7 @@ const HomeScreen = (props) => {
       <TouchableOpacity onPress={() => navigation.navigate("Components")}>
         <Text>Go to Component Screen</Text>
       </TouchableOpacity>
-      <ListScreen />
+      <Image source={require("../../assets/mountain.jpg" )} />
     </View>
   );
 };
