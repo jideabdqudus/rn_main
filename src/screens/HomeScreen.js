@@ -1,14 +1,24 @@
-import React, {Fragment} from 'react';
-import { Text, StyleSheet, View } from 'react-native';
-// import { View } from 'react-native-web';
-import ComponentsScreen from './ComponentScreen';
-import ListScreen from './ListScreen';
+import React from "react";
+import { Text, StyleSheet, View, Button, TouchableOpacity } from "react-native";
+import ComponentsScreen from "./ComponentScreen";
+import ListScreen from "./ListScreen";
 
-const HomeScreen = () => {
-  return (<View>
-  <Text style={styles.text}>Hello World</Text><ComponentsScreen/>
-    <ListScreen/>
-  </View>)
+const HomeScreen = (props) => {
+  const { navigation } = props;
+  return (
+    <View>
+      <Text style={styles.text}>Hello World</Text>
+      <ComponentsScreen />
+      <Button
+        title="Go to List Screen"
+        onPress={() => navigation.navigate("List")}
+      />
+      <TouchableOpacity onPress={() => navigation.navigate("Components")}>
+        <Text>Go to Component Screen</Text>
+      </TouchableOpacity>
+      <ListScreen />
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
